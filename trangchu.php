@@ -43,7 +43,7 @@
       
         <div class = "container  " >
         <div class="row nav" >
-            <div class="col-3">
+            <div class="col">
                 <img src="https://lan.nanoweb.vn/mediacenter/media/images/945/logo/logo-1569903399.png" alt="anh_logo">
             </div>
             <div class="col-6 menu">
@@ -55,8 +55,9 @@
                     <li><a href="#">LIÊN HỆ</a></li>
                 </ul>
             </div>
-            <div class="col nav_icon" >
+            <div class="col nav_icon" > 
                 <ul class="d-flex">
+                    <li> <input type="text" placeholder="Tìm kiếm"> </li>
                     <li><a href="#"><i class='bx bx-search'></i></a></li>
                     <li><a href="#"><i class='bx bx-cart-alt' ></i></a></li>
                     <li><a href="#"><i class='bx bx-user'></i></a></li>

@@ -30,6 +30,15 @@ body, html {
     font-size: 25px;
 
 }
+.nav_icon ul li input {
+    border-radius: 25px;
+    display: flex;
+    width: 160px;
+    height:25px;
+    font-size: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
 .nav_icon ul li a {
     color:white;
 }
@@ -277,4 +286,5 @@ body, html {
     color: white;
     margin-right: 10px;
 }
+
 
