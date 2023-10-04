@@ -57,8 +57,18 @@
             </div>
             <div class="col nav_icon" > 
                 <ul class="d-flex">
-                    <li> <input type="text" placeholder="Tìm kiếm"> </li>
-                    <li><a href="#"><i class='bx bx-search'></i></a></li>
+                <li>
+                <form action="trangchitietsp.php" class = "d-flex">
+                <input name="Search" type="text" placeholder="Tìm kiếm"> 
+                <button type="submit"><i class='bx bx-search'></i> </button>
+          
+                </form>
+
+                </li>  
+                   
+                    
+
+
                     <li><a href="#"><i class='bx bx-cart-alt' ></i></a></li>
                     <li><a href="#"><i class='bx bx-user'></i></a></li>
                 </ul>
@@ -147,7 +157,7 @@
         ?>
             <div class="item col" >
                 <div>
-                    <a href="trangsanpham.html"> <img style="width:360px"; src="<?=$row["img_danh_mục"]?>" alt="anh <?=$row["ten_danh_muc"]?>"></a>
+                    <a href="chitietsp.php?ID_DM=<?=$row["ID"]?>"> <img style="width:360px"; src="<?=$row["img_danh_mục"]?>" alt="anh <?=$row["ten_danh_muc"]?>"></a>
                 </div>
                 <div class="item_content">
                     <h3><?=$row["ten_danh_muc"]?></h3>
@@ -174,8 +184,6 @@
                 <div class="name_SP d-flex ">
                     <h3 class="name_number2">03</h3>
                     <h3 class="ml-1">SẢN PHẨM TIÊU BIỂU</h3>
-    
-                    
                 </div>
     
             </div>
@@ -208,10 +216,6 @@
               
         </div>
         </div>
-    
-    
-
-
     <div class="footer">
             <div class="row footer_line">
                 <div class="col footer_menu mt-5 mb-5">
@@ -222,7 +226,6 @@
                         <li><a href="#">Rèm văn phòng</a></li>
                         <li><a href="#">Khóa thông minh</a></li>
                     </ul>
-
                 </div>
 
                 <div class="col footer_menu mt-5 mb-5">

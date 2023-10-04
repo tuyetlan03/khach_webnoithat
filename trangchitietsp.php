@@ -89,18 +89,22 @@
     </div>
     </div>
 </div>
-
-
     <!-- content -->
    <div class="container mt-5">
     <!-- sanphamchitiettop -->
     <div class="d-flex">
-
-       
-
         <!-- left -->
         <?php 
-            $sql = "SELECT * FROM  san_pham WHERE ID = 1";
+            if(isset($_GET['Search'])) {
+                $search = $_GET['Search'];
+                $sql = "SELECT * FROM san_pham WHERE ten_san_pham  like '%$search%'";
+             
+            }else if(isset($_GET['ID_DM']))
+            {
+                $sql = "SELECT * FROM san_pham WHERE ma_danh_muc = " .$_GET["ID_DM"];
+            }else{
+            $sql = "SELECT * FROM  san_pham WHERE ID = ".$_GET["ID"];
+            }
             $result = $conn->query($sql);// đây là phần thực hiện truy vấn
             if ($result->num_rows > 0) { // nếu dữ liệu có thì ta sử dụng while để duyệt qua từng hàng (có thể sử dụng foreach)
                 while ($row = $result->fetch_assoc()) 
@@ -123,33 +127,25 @@
             <?php
             
         ?>
-
         </div>
-
-
     </div>
-
     <!-- chitietsp -->
     <div class="mota mt-4">
         <h3>MÔ TẢ</h3>
         <ul>
             <li><?=$row["mo_ta_san_pham_chi_tiet"]?></li>
         </ul>
-
     </div>
-    
     <?php
             }
             } else {
-                echo "Không có dữ liệu.";
+                echo "<h3>Không có dữ liệu.</h3>";
             }
         ?>
     <!-- sanphamkhac -->
     <div></div>
 
    </div>
-
-   
      <!-- footer -->
      <div class="footer ">
         <div class="row footer_line">

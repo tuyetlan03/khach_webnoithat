@@ -114,7 +114,7 @@
                             while ($row = $result->fetch_assoc()) 
                         { // Sử dụng biến $row 
                     ?>
-                            <li><a href="#"><?=$row["ten_danh_muc"]?></a></li>
+                            <li><a href="chitietsp.php?ID_DM=<?=$row["ID"]?>"><?=$row["ten_danh_muc"]?></a></li>
                             <?php
                             }
                             } else {
@@ -174,7 +174,7 @@
                         { // Sử dụng biến $row 
                     ?>
                         <div class="col-4">
-                            <a href="#"><img class="imgsp" src="<?=$row["anh_thumbnail"]?>" alt="anh <?=$row["ten_san_pham"]?>"></a>
+                            <a href="chitietsp.php?ID=<?=$row["ID"]?>"><img class="imgsp" src="<?=$row["anh_thumbnail"]?>" alt="anh <?=$row["ten_san_pham"]?>"></a>
                             <p><?=$row["ten_san_pham"]?></p>
                             <p style="color:red"><?=$row["gia_ban"]?></p>
                         </div>
