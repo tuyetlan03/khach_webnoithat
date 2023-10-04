@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <?php
+    include_once 'connect.php'; // nạp file kết nối database để truy suất dữ liệu
+    ?>
+
     <!--link bootstrap-->
     <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
@@ -21,6 +26,8 @@
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 <!-- link css -->
 <link rel="stylesheet" href="style.css">
+
+<!-- SELECT * FROM san_pham WHERE ID = 1 -->
 
 <style>
     .ctsp .muangay {
@@ -88,33 +95,55 @@
    <div class="container mt-5">
     <!-- sanphamchitiettop -->
     <div class="d-flex">
+
+       
+
         <!-- left -->
+        <?php 
+            $sql = "SELECT * FROM  san_pham WHERE ID = 1";
+            $result = $conn->query($sql);// đây là phần thực hiện truy vấn
+            if ($result->num_rows > 0) { // nếu dữ liệu có thì ta sử dụng while để duyệt qua từng hàng (có thể sử dụng foreach)
+                while ($row = $result->fetch_assoc()) 
+            { // Sử dụng biến $row 
+        ?>
         <div>
-            <img class="h-60" src="https://lan.nanoweb.vn/mediacenter/media/images/945/products/945/30/s400_400/8-1570679331.jpg" alt="ảnh sản phẩm">
+            <img style="height=500px; width: 600px"; src="<?=$row["anh_thumbnail"]?>" alt="anh <?=$row["ten_san_pham"]?>">
         </div>
         <!-- right -->
-        <div>
-            <p style="font-size: 25px;"> <b>DHI-ASL6101K</b> </p>
-            <p style="font-size: 25px;"> <b>9.490.000 VNĐ</b> </p>
+       
+        <div class="ml-4">
+            <p style="font-size: 25px;"> <b><?=$row["ten_san_pham"]?></b> </p>
+            <p style="font-size: 25px;"> <b><?=$row["gia_ban"]?></b> </p>
             <label>Số Lượng</label>
             <input type="number" min="1" max="50" value="1"> 
             <div class="ctsp">
                 <button class="muangay">MUA NGAY</button>
                 <button><i class='bx bx-cart-add'></i></button>
             </div>
-           
+            <?php
+            
+        ?>
 
         </div>
+
+
     </div>
 
     <!-- chitietsp -->
-    <div class="mota mt-5">
+    <div class="mota mt-4">
         <h3>MÔ TẢ</h3>
         <ul>
-            <li>Bề mặt và tay cầm làm bằng hợp kim kẽm mạnh mẽ và chắc chắn.</li>
+            <li><?=$row["mo_ta_san_pham_chi_tiet"]?></li>
         </ul>
 
     </div>
+    
+    <?php
+            }
+            } else {
+                echo "Không có dữ liệu.";
+            }
+        ?>
     <!-- sanphamkhac -->
     <div></div>
 
@@ -122,7 +151,7 @@
 
    
      <!-- footer -->
-     <div class="footer">
+     <div class="footer ">
         <div class="row footer_line">
             <div class="col footer_menu mt-5 mb-5">
                 <ul>

@@ -50,7 +50,7 @@
                 <ul class="d-flex">
                     <li> <a href="trangchu.html">TRANG CHỦ</a> </li>
                     <li><a href="trangsanpham.html">SẢN PHẨM</a></li>
-                    <li><a href="#">GIỚI THIỆU</a></li>
+                    <li><a href="trangchitietsp.php">GIỚI THIỆU</a></li>
                     <li><a href="#">TIN TỨC</a></li>
                     <li><a href="#">LIÊN HỆ</a></li>
                 </ul>
