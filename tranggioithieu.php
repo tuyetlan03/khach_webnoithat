@@ -26,42 +26,16 @@
     <style>
         .gioithieu_header {
         height: 130px;
-        background-color: rgba(0,0,0,0.8);
+        
         }
     </style>
 </head>
-<body>
+<body style = "  background-color: rgba(255,0,0,0.3)">
      <!-- header -->
-     <div class="gioithieu_header">
-      
-        <div class = "container  " >
-        <div class="row nav" >
-            <div class="col-3">
-                <img src="https://lan.nanoweb.vn/mediacenter/media/images/945/logo/logo-1569903399.png" alt="anh_logo">
-            </div>
-            <div class="col-6 menu">
-                <ul class="d-flex">
-                    <li> <a href="trangchu.html">TRANG CHỦ</a> </li>
-                    <li><a href="trangsanpham.html">SẢN PHẨM</a></li>
-                    <li><a href="#">GIỚI THIỆU</a></li>
-                    <li><a href="#">TIN TỨC</a></li>
-                    <li><a href="#">LIÊN HỆ</a></li>
-                </ul>
-            </div>
-            <div class="col nav_icon" >
-                <ul class="d-flex">
-                    <li><a href="#"><i class='bx bx-search'></i></a></li>
-                    <li><a href="#"><i class='bx bx-cart-alt' ></i></a></li>
-                    <li><a href="#"><i class='bx bx-user'></i></a></li>
-                </ul>
-            </div>
-
-           
-            
-        </div>
-        </div>
-    </div>
-
+    <?php
+    include_once 'header.php';
+    ?>
+    <div  >
     <!-- content -->
     <div>
         <div class="container">
@@ -121,50 +95,11 @@
         </div>
     
     </div>
-    
+    </div>
      <!-- footer -->
-     <div class="footer">
-        <div class="row footer_line">
-            <div class="col footer_menu mt-5 mb-5">
-                <ul>
-                    <li><h5>SẢN PHẨM</h5></li>
-                    <li><a href="#">Nội thất văn phòng</a></li>
-                    <li><a href="#">Ghế văn phòng</a></li>
-                    <li><a href="#">Rèm văn phòng</a></li>
-                    <li><a href="#">Khóa thông minh</a></li>
-                </ul>
-
-            </div>
-
-            <div class="col footer_menu mt-5 mb-5">
-                <ul>
-                    <li><h5>TRỢ GIÚP</h5></li>
-                    <li><a href="#">Nội thất văn phòng</a></li>
-                    <li><a href="#">Ghế văn phòng</a></li>
-                    <li><a href="#">Rèm văn phòng</a></li>
-                    <li><a href="#">Khóa thông minh</a></li>
-                </ul>
-
-            </div>
-
-            <div class="col footer_menu mt-5 mb-5">
-                <ul>
-                    <li><h5>VỀ CHÚNG TÔI</h5></li>
-                    <li><a href="#">Nội thất văn phòng</a></li>
-                    <li><a href="#">Ghế văn phòng</a></li>
-                    <li><a href="#">Rèm văn phòng</a></li>
-                    <li><a href="#">Khóa thông minh</a></li>
-                </ul>
-
-            </div>
-           
-            <div class="col mt-5 mb-5 "> <h5>FANPAGE</h5></div>
-            <div class="col mt-5 mb-5"><h5>THEO DÕI CHÚNG TÔI</h5></div>
-        </div>
-        <div class="footer_end"><p>@Copy right 2023, Designed by Lanweb</p></div>
-    
-</div>
-
+     <?php
+     include_once 'footer.php';
+     ?>
 
 </body>
 </html>

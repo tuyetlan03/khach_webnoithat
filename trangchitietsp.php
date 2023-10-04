@@ -58,53 +58,26 @@
 </style>
 
 </head>
-<body>
+<body style = "  background-color: rgba(255,0,0,0.3)">
 <!-- header -->
-<div class="gioithieu_header">
-      
-    <div class = "container  " >
-    <div class="row nav" >
-        <div class="col-3">
-            <img src="https://lan.nanoweb.vn/mediacenter/media/images/945/logo/logo-1569903399.png" alt="anh_logo">
-        </div>
-        <div class="col-6 menu">
-            <ul class="d-flex">
-                <li> <a href="trangchu.html">TRANG CHỦ</a> </li>
-                <li><a href="trangsanpham.html">SẢN PHẨM</a></li>
-                <li><a href="#">GIỚI THIỆU</a></li>
-                <li><a href="#">TIN TỨC</a></li>
-                <li><a href="#">LIÊN HỆ</a></li>
-            </ul>
-        </div>
-        <div class="col nav_icon" >
-            <ul class="d-flex">
-                <li><a href="#"><i class='bx bx-search'></i></a></li>
-                <li><a href="#"><i class='bx bx-cart-alt' ></i></a></li>
-                <li><a href="#"><i class='bx bx-user'></i></a></li>
-            </ul>
-        </div>
+    <?php
+    include_once 'header.php';
+    ?>
 
-       
-        
-    </div>
-    </div>
-</div>
+    <div >
     <!-- content -->
    <div class="container mt-5">
     <!-- sanphamchitiettop -->
+
+
+    <!-- đổi lại action theo tên giỏ hàng  -->
+    <form action="cart.php"> 
     <div class="d-flex">
         <!-- left -->
         <?php 
-            if(isset($_GET['Search'])) {
-                $search = $_GET['Search'];
-                $sql = "SELECT * FROM san_pham WHERE ten_san_pham  like '%$search%'";
-             
-            }else if(isset($_GET['ID_DM']))
-            {
-                $sql = "SELECT * FROM san_pham WHERE ma_danh_muc = " .$_GET["ID_DM"];
-            }else{
-            $sql = "SELECT * FROM  san_pham WHERE ID = ".$_GET["ID"];
-            }
+           
+            $sql = "SELECT * FROM  san_pham WHERE id = ".$_GET["ID"];
+    
             $result = $conn->query($sql);// đây là phần thực hiện truy vấn
             if ($result->num_rows > 0) { // nếu dữ liệu có thì ta sử dụng while để duyệt qua từng hàng (có thể sử dụng foreach)
                 while ($row = $result->fetch_assoc()) 
@@ -116,19 +89,23 @@
         <!-- right -->
        
         <div class="ml-4">
+            
             <p style="font-size: 25px;"> <b><?=$row["ten_san_pham"]?></b> </p>
             <p style="font-size: 25px;"> <b><?=$row["gia_ban"]?></b> </p>
             <label>Số Lượng</label>
-            <input type="number" min="1" max="50" value="1"> 
+            <input  name="soluong"  type="number" min="1" max="50" value="1">
+            <input style = "display: none;"  name="ID"  type="number" value="<?=$row["id"]?>">
+             
             <div class="ctsp">
-                <button class="muangay">MUA NGAY</button>
-                <button><i class='bx bx-cart-add'></i></button>
+                <button  type="submit" class="muangay">MUA NGAY</button>
+                <button  type="submit"><i class='bx bx-cart-add'></i></button>
             </div>
             <?php
             
         ?>
         </div>
     </div>
+    </form>
     <!-- chitietsp -->
     <div class="mota mt-4">
         <h3>MÔ TẢ</h3>
@@ -146,48 +123,11 @@
     <div></div>
 
    </div>
-     <!-- footer -->
-     <div class="footer ">
-        <div class="row footer_line">
-            <div class="col footer_menu mt-5 mb-5">
-                <ul>
-                    <li><h5>SẢN PHẨM</h5></li>
-                    <li><a href="#">Nội thất văn phòng</a></li>
-                    <li><a href="#">Ghế văn phòng</a></li>
-                    <li><a href="#">Rèm văn phòng</a></li>
-                    <li><a href="#">Khóa thông minh</a></li>
-                </ul>
-
-            </div>
-
-            <div class="col footer_menu mt-5 mb-5">
-                <ul>
-                    <li><h5>TRỢ GIÚP</h5></li>
-                    <li><a href="#">Nội thất văn phòng</a></li>
-                    <li><a href="#">Ghế văn phòng</a></li>
-                    <li><a href="#">Rèm văn phòng</a></li>
-                    <li><a href="#">Khóa thông minh</a></li>
-                </ul>
-
-            </div>
-
-            <div class="col footer_menu mt-5 mb-5">
-                <ul>
-                    <li><h5>VỀ CHÚNG TÔI</h5></li>
-                    <li><a href="#">Nội thất văn phòng</a></li>
-                    <li><a href="#">Ghế văn phòng</a></li>
-                    <li><a href="#">Rèm văn phòng</a></li>
-                    <li><a href="#">Khóa thông minh</a></li>
-                </ul>
-
-            </div>
-           
-            <div class="col mt-5 mb-5 "> <h5>FANPAGE</h5></div>
-            <div class="col mt-5 mb-5"><h5>THEO DÕI CHÚNG TÔI</h5></div>
         </div>
-        <div class="footer_end"><p>@Copy right 2023, Designed by Lanweb</p></div>
-    
-</div>
+     <!-- footer -->
+    <?php
+    include_once 'footer.php';
+    ?>
    
 
 </body>
