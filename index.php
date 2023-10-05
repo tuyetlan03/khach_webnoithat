@@ -62,7 +62,7 @@
               <li>
               <form action="trangsanpham.php" class = "d-flex">
               <input name="Search" type="text" placeholder="Tìm kiếm"> 
-              <button type="submit"><i class='bx bx-search'></i> </button>
+              <button style="background-color:rgba(0,0,0,0.001); color:white;border:none;"  type="submit"><i class='bx bx-search'></i> </button>
         
               </form>
 

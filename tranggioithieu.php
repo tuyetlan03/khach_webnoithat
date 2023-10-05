@@ -44,7 +44,7 @@
                     <div>
                         <h1 class="">Giới Thiệu</h1>
                     <ul class="d-flex">
-                        <li><a href="/trang chu.html">Trang Chủ</a></li>
+                        <li><a href="index.php">Trang Chủ</a></li>
                         <li>/</li>
                         <li><a href="#">Giới Thiệu</a></li>
                     </ul>
@@ -75,23 +75,7 @@
                     <p>Nội thất Bella Vita mang đến cho quí khách hàng những sản phẩm theo phong cách tinh tế, đơn giản, sang trọng, văn phòng hiện đại, sang trọng mang phong cách của Châu Âu. Đây là một phong cách thiết kế nội thất được phát triển rộng rãi trong nhiều năm qua. Sự sang trọng, chuẩn mực và tinh tế là những gì mà phong cách này mang lại cho bất kỳ không gian nào. Sứ mệnh của Bella Vita là mang đến cho khách hang những giải pháp không gian hoàn hảo nhất. Với mong muốn đáp ứng sự thỏa mãn khách hang ở mức cao nhất, chúng tôi luôn xem khách hang là trung tâm của mọi hành động. Giá trị cốt lõi là tiền để phát triển của công ty: Chất lượng sản phẩm và dịch vụ quyết định sự tồn tạp của doanh nghiệp Gia tang giá trị cho xa hội, khách hàng, người lao động và cổ đông là mục tiêu và động lực của sự phát triển bền vững. Lao động sáng tạo là nền tang của sự phát triển. Quan hệ hợp tác, chia sẻ, cam kết và thực hiện cam kết là nền tang văn hóa doanh nghiệp.</p>
                 </div>
             </div>
-            <div class="mt-5">
-                <h3>LĨNH VỰC HOẠT ĐỘNG </h3>
-                <div class="line_black">
-            </div>
-            
-            </div>
-            <div class="row ">
-                <div class="item">
-                    <div>
-                         <a href="#"> <img alt="QUẠT TRẦN MỸ" src="https://lan.nanoweb.vn/mediacenter/media/images/945/category/ava/s400_400/15a-1570763881.jpg"></a>
-                    </div>
-                    <div class="item_content">
-                        <p>1</p>
-                        <h3>QUẠT TRẦN MỸ</h3>
-                    </div>
-                </div>
-            </div>
+           
         </div>
     
     </div>
