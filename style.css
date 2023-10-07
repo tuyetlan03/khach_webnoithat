@@ -95,7 +95,6 @@ body, html{
 
 }
 .gioithieu1 {
-    height:75vh;
     display: flex;
     margin-top: 20px;
 
@@ -127,7 +126,7 @@ body, html{
     background-color: black;
 }
 .sanpham {
-   min-height: 100vh;
+   min-height: 50vh;
    margin-bottom: 30px;
 }
 .name_SP {

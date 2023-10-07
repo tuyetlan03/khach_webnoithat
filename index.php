@@ -54,7 +54,7 @@
                   <li><a href="trangsanpham.php">SẢN PHẨM</a></li>
                   <li><a href="tranggioithieu.php">GIỚI THIỆU</a></li>
                   <li><a href="#">TIN TỨC</a></li>
-                  <li><a href="#">LIÊN HỆ</a></li>
+                  <li><a href="tranglienhe.php">LIÊN HỆ</a></li>
               </ul>
           </div>
           <div class="col nav_icon" > 
@@ -62,16 +62,11 @@
               <li>
               <form action="trangsanpham.php" class = "d-flex">
               <input name="Search" type="text" placeholder="Tìm kiếm"> 
-              <button style="background-color:rgba(0,0,0,0.001); color:white;border:none;"  type="submit"><i class='bx bx-search'></i> </button>
-        
+              <button style="background-color:rgba(0,0,0,0.001); color:white;border:none;"  type="submit"><i class='bx bx-search'></i> </button>    
               </form>
-
               </li>  
-                 
-                  
 
-
-                  <li><a href="#"><i class='bx bx-cart-alt' ></i></a></li>
+                  <li><a href="cart.php"><i class='bx bx-cart-alt' ></i></a></li>
                   <li><a href="#"><i class='bx bx-user'></i></a></li>
               </ul>
           </div>
@@ -91,7 +86,7 @@
 
             
     <!-- gioithieu -->
-   <div class="gioithieu1 ">
+   <div class="gioithieu1">
     <div class=" container">
         <div class="row">
             <!-- gioithieu_left -->
@@ -136,51 +131,56 @@
     </div>
    </div>
     <!-- sanpham -->
-    <div class="sanpham ">
-    <div class="container"> 
-        
-        <div class="row">
-            <div class="name_SP d-flex">
-                <h3 class="name_number2">02</h3>
-                <h3 class="ml-5">SẢN PHẨM</h3>
-
-                
+    <div class="sanpham mt-5">
+        <div class="container"> 
+            <div class="row ">
+                <div class="name_SP d-flex mt-5">
+                    <h3 class="name_number2">02</h3>
+                    <h3 class="ml-5">SẢN PHẨM</h3>
+                </div>
             </div>
-
-        </div>
         
         <!-- anh1 -->
         <div class="row">
-        <?php 
-            $sql = "SELECT * FROM danh_muc";
-            $result = $conn->query($sql);// đây là phần thực hiện truy vấn
-            if ($result->num_rows > 0) { // nếu dữ liệu có thì ta sử dụng while để duyệt qua từng hàng (có thể sử dụng foreach)
-                while ($row = $result->fetch_assoc()) 
-            { // Sử dụng biến $row 
-        ?>
-            <div class="item col" >
-                <div>
-                    <a href='trangsanpham.php?ID_DM=<?=$row["id"]?>'> <img style="width:360px"; src="<?=$row["img_danh_mục"]?>" alt="anh <?=$row["ten_danh_muc"]?>"></a>
-                </div>
-                <div class="item_content">
-                    <h3><?=$row["ten_danh_muc"]?></h3>
+                <?php 
+                $sql = "SELECT * FROM danh_muc";
+                $result = $conn->query($sql);
 
-                </div>
+                if ($result->num_rows > 0) {
+                    $count = 0; // Đếm sản phẩm đã hiển thị
+                    while ($row = $result->fetch_assoc()) { 
+                        if ($count % 3 == 0 && $count != 0) { // Đóng hàng sau khi hiển thị 3 sản phẩm
+                            echo '</div><div class="row">';
+                        }
+                ?>
+                    <div class="item col-4">
+                        <div>
+                            <a href='trangsanpham.php?ID_DM=<?=$row["id"]?>'>
+                                <img style="width:360px"; src='<?=$row["anh_danh_muc"]?>' alt='anh <?=$row["ten_danh_muc"]?>'>
+                            </a>
+                        </div>
+                        <div class="item_content">
+                            <h3><?=$row["ten_danh_muc"]?></h3>
+                        </div>
+                    </div>
+                    
+                <?php
+                        $count++;
+                    }
+                } else {
+                    echo "Không có dữ liệu.";
+                }
+                ?>
+        </div>
 
-            </div>
-            <?php
-            }
-            } else {
-                echo "Không có dữ liệu.";
-            }
-        ?>
-            
-         </div>
+
+        </div>    
+    </div>   
 
      <!-- sản phẩm tiêu biểu -->
       
      
-        <div class="sanpham ">
+        <div class="sanpham">
             <div class="container"> 
                 
                 <div class="row">
@@ -216,7 +216,7 @@
                     </a>
                 </div>
             
-                
+            
             </div>
         </div>
     </div>

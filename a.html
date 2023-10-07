@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+abFtnqd4b5uRRx5F5p5qO2t5z9zC+eJCAw5Fb5O5LaF1Rfj" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0v8FqFjcJ6pajs/rfdfs3SO+k7L5S9zWnF5xXnX4w5T4D03dYl" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        .card1{
+            margin: 0;
+             position: relative;
+             width: 17.5em;
+             height: 20em;
+             background-color: #000;
+             box-shadow: 0 15px 45px rgba(0 0 0 1) ;
+             display: flex;
+             overflow: hidden;
+             transition: 0.5s ease-in-out;
+             margin-top: 1rem;
+         }
+         .card1:hover{
+             width: 35em;
+         }
+         .card1 .imgds{
+             position: relative;
+             min-width: 17.5em;
+             height: 100%;
+             background: #fff;
+             overflow: hidden;
+             box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+         }
+         .card1 .imgds img{
+             max-width: 17.5em;
+             transition: 0.5s ease-in-out;
+         }
+         .card1:hover .imgds img{
+             transform: rotate(35deg) translateX(1em);
+         }
+         .card1 .imgds h3{
+             margin-left: 0.5em;
+             color: #000;
+             text-transform: uppercase;
+             font-weight: 600;
+             font-size: 1.5em;
+             line-height: 1em;
+         }
+         .card1 .imgds h3 span{
+             font-size: 0.65em;
+             font-weight: 300;
+             text-transform: none;
+             opacity: 0.85;
+         }
+         .card1 .details1{
+             position: relative;
+             min-width: 18rem;
+             height: 100%;
+             background: #fff;
+             display: flex;
+             justify-content: center;
+             /* text-align: center; */
+             flex-direction: column;
+             padding-left: 1em;
+             box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+         }
+         .card1 .details::before{
+         content: '';
+         position: absolute;
+         left: 0;
+         height: 0;
+         width: 0;
+         border-top: 10px solid transparent;
+         border-bottom: 10px solid transparent;
+         border-left: 10px solid black;
+         }
+         .card1 .details1 h3{
+             margin-left: 0.5em;
+             color: #000;
+             text-transform: uppercase;
+             font-weight: 600;
+             font-size: 1.5em;
+             line-height: 1em;
+             
+         }
+         .card1 .details1 h3 span{
+            
+             font-size: 0.65em;
+             font-weight: 300;
+             text-transform: none;
+             opacity: 0.85;
+         }
+         .card1 .details1 h4{
+             color: black;
+             text-transform: uppercase;
+             font-weight: 600;
+             font-size: 0.9em;
+             margin-top: 10px;
+             margin-bottom: 10px;
+             line-height: 1em;
+         }
+         .card1 .details1 p{
+             color: black;
+             opacity: 0.85;
+             font-size: 0.8em;
+         }
+         .card1 .details1 .size{
+             gap: 5px;
+             display: flex;
+             flex-wrap: wrap;
+             margin: 0;
+         }
+         .card1 .details1 .size li{
+             list-style: none;
+             font-size: 0.5rem;
+             min-width: 40px;
+             height: 40px;
+             border: 2px solid black;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             font-weight: 500;
+             opacity: 0.65;
+             cursor: pointer;
+             transition: 0.5s;
+             padding: 0.5rem;
+           
+             
+         }
+         .card1 .details1 .size li:hover{
+             color: #fff;
+             background:#4ba9e9 ;
+             opacity: 1;
+             box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+         
+         }
+         .group1{
+             position: relative;
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+             margin-top: 1em;
+         }
+         .card1 .details1 .group h2{
+             color: black;
+             font-weight: 600;
+             font-size: 2em;
+         }
+         .card1 .details1 .group1 h2 sup{
+             font-weight: 300;
+         }
+         .card1 .details1 .group1 h2 small{
+             font-size: 0.75em;
+         }
+         .card1 .details1 .group1 a{
+             display: inline-flex;
+             padding: 10px 20px;
+             margin-right: 20px;
+             background: #fff;
+             text-decoration: none;
+             text-transform: uppercase;
+             font-weight: 500;
+             color:black;
+             box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+         }
+         .card1 .details1 .group1 a:hover{
+             color: #fff;
+             background:#4ba9e9 ;
+             opacity: 1;
+             box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+         }
+         .claa{
+            
+             margin: 0;
+             margin-top: 5px;
+         }
+         .danhsach{
+             display: flex;
+             flex-wrap: wrap;
+         }
+         .gradient-list{
+             border-right: 3px solid black;
+             margin-top: 1rem;
+             height: 100%;
+         }
+         .gradient-list li{
+             height: 40px;
+             width: 400px;
+             text-align: center;
+             margin-left: 50px;
+             background-color: rgb(232,232,232);
+             line-height: 2rem;
+             margin: 1rem;
+         }
+         .gradient-list li:hover{
+             color: #fff;
+             background:#4ba9e9 ;
+             opacity: 1;
+             box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+         }
+         .title-danhsach{
+             padding: 1rem;
+             margin-top: 5rem;
+         }
+         .danhsach-a{
+             color: black;
+             text-decoration: none;
+             list-style: none;
+             height: 40px;
+             width: 400px;
+             padding-left: auto;
+             padding-right: auto;
+         }
+         .danhsach-a:hover{
+             text-decoration: none;
+             color: #fff;
+         }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+           
+            <div class="card1 ">
+                <div class="imgds">
+                    <img style="height: 200px; width: 280px;" src="data:image/jpeg;base64,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" alt=" ảnh giày ">
+                    <h3>DANI CAKE TRIEU KHUC<br><span >Cơ Sở-01</span></h3>
+                </div>
+                <div class="details1">
+                    <h3>DANI CAKE TRIEU KHUC<br> <span >Cs-01</span></h3>
+                    <h4 class="claa">54 Triều Khúc, Q.Thanh Xuân, Hà Nội</h4>
+                    <p  class="claa"> Giờ mở cửa: 7h30-22h00</p>
+                        <h4  class="claa">Tiện Ích</h4>
+                        <ul  class="size" style="padding-left: 0" >
+                            <li><i class='bx bxs-car-garage'></i> Có chỗ đỗ xe hơi </li>
+                            <li> <i class='bx bx-home'></i>Phục Vụ Tại chỗ</li>
+                            <li> <i class='bx bxs-shopping-bag-alt'></i>Mang đi</li>
+                        
+                        </ul>
+                        <div class="group1">
+                            <!-- <h2><sup>$</sup>499<small>.99</small></h2> -->
+                        
+                            <a  href="https://www.google.com/maps/place/54+P.+Tri%E1%BB%81u+Kh%C3%BAc,+Thanh+Xu%C3%A2n+Nam,+Thanh+Xu%C3%A2n,+H%C3%A0+N%E1%BB%99i,+Vi%E1%BB%87t+Nam/@20.9844871,105.7959694,17z/data=!3m1!4b1!4m5!3m4!1s0x3135acc696073dd9:0x6dce4502afe3e1!8m2!3d20.9844821!4d105.7981635" >Xem Bản ĐỒ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+        </div>
+    </div>
+</body>
+</html>

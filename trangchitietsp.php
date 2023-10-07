@@ -71,7 +71,7 @@
 
 
     <!-- đổi lại action theo tên giỏ hàng  -->
-    <form action="cart.php"> 
+    <form action="cart.php "method="post"> 
     <div class="d-flex">
         <!-- left -->
         <?php 
@@ -97,7 +97,7 @@
             <input style = "display: none;"  name="ID"  type="number" value="<?=$row["id"]?>">
              
             <div class="ctsp">
-                <button  type="submit" class="muangay">MUA NGAY</button>
+                <button onclick='adcart(<?php echo $row["id"] ?>)' class="muangay">MUA NGAY</button>
                 <button  type="submit"><i class='bx bx-cart-add'></i></button>
             </div>
             <?php
@@ -128,7 +128,22 @@
     <?php
     include_once 'footer.php';
     ?>
-   
+   <script>
+        function adcart(ID) {
+            numbe = 1;
+            numbe = $('#numbe').val();
+            //alert(ID);
+            //alert(numbe);
+            $.post("addcart.php", {
+                "ID": ID,
+                "numbe": numbe
+            }, function(data) {
+
+                $("#numbercart").text(data);
+            });
+            alert("Bạn đã thêm 1 sản phẩm vào giỏ hàng");
+        }
+    </script>
 
 </body>
 </html>
